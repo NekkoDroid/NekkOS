@@ -10,4 +10,3 @@ ln -s /dev/null /usr/local/share/applications/bssh.desktop
 ln -s /dev/null /usr/local/share/applications/bvnc.desktop
 ln -s /dev/null /usr/local/share/applications/qv4l2.desktop
 ln -s /dev/null /usr/local/share/applications/qvidcap.desktop
-ln -s /dev/null /usr/local/share/applications/nvim.desktop
