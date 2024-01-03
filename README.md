@@ -11,7 +11,6 @@ This is a minimal installation script to with my DE of choice.
 
 - Secure boot
 - Systemd boot loader
-- Plymouth boot screen
 - 2 signed unified kernel images based on the release kernel
   - 1 system kernel which is used for general usage
   - 1 rescue kernel with sending you to the `rescue.target`

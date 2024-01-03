@@ -19,5 +19,5 @@ system_options="--cmdline /etc/kernel/cmdline-system"
 #rescue_config="/etc/mkinitcpio.conf"
 #rescue_image="/boot/initramfs-linux-rescue.img"
 rescue_uki="/boot/EFI/Linux/arch-linux-rescue.efi"
-rescue_options="--cmdline /etc/kernel/cmdline-rescue -S autodetect,plymouth"
+rescue_options="--cmdline /etc/kernel/cmdline-rescue -S autodetect"
 EOF
