@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+import os
+import pathlib
+import subprocess
+import sys
+
+srcdir = os.getenv("SRCDIR")
+if not srcdir:
+	sys.exit("$SRCDIR not set")
+
+srcdir = pathlib.Path(srcdir)
+if not srcdir.exists():
+	sys.exit(f"{srcdir} does not exist")
+
+outputdir = os.getenv("OUTPUTDIR")
+if not outputdir:
+	sys.exit("$OUTPUTDIR not set")
+
+outputdir = pathlib.Path(outputdir)
+if not outputdir.exists():
+	sys.exit(f"{outputdir} does not exist")
+
+environment = os.environ | {
+	"EUID": "123",
+	"PKGDEST": outputdir,
+}
+
+for directory in srcdir.glob("*/"):
+	subprocess.run(
+		[
+			"makepkg",
+			"--skippgpcheck",
+		],
+		cwd=directory,
+		env=environment,
+	).check_returncode()

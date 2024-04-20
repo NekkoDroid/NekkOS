@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import os
+import pathlib
+import sys
+
+output_dir = os.getenv("OUTPUTDIR")
+if not output_dir:
+	sys.exit("$OUTPUTDIR not set")
+
+output_dir = pathlib.Path(output_dir)
+if not output_dir.exists():
+	sys.exit(0)
+
+for package in output_dir.glob("*.pkg.tar.zst"):
+	package.unlink()
