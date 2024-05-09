@@ -1,0 +1,38 @@
+# This project follows the conventional commits format (https://www.conventionalcommits.org)
+# The header of the commit message should follow the following format (details at the bottom):
+# [type](optional scope): [subject]
+# No more than 50 chars. ======================= ↓
+
+
+# The body uses the imperative, present tense: "change" not "changed" nor "changes".
+# The body should include the motivation for the change and contrast this with previous behavior.
+# Wrap at 72 chars. ================================================== ↓
+
+
+# Provide links or keys to any relevant tickets, articles or other resources.
+# * These should follow the git trailer format: https://git-scm.com/docs/git-interpret-trailers
+# Wrap at 72 chars. ================================================== ↓
+
+
+# ** Type
+# Must be one of the following:
+# - build: Build related changes
+# - chore: Changes to auxiliary tools and files
+# - ci: Changes in the CI pipeline
+# - docs: Documentation only changes
+# - feat: A new feature
+# - fix: A bug fix
+# - perf: A code refactor that targets performance improvements
+# - refactor: A code change that neither fixes a bug nor adds a feature
+# - revert: Reverting things
+# - style: Markup, white-space, formatting, missing semi-colons...
+# - test: Adding missing tests
+
+# ** Scope
+# A scope may be provided to a commit’s type, to provide additional contextual information
+# and is contained within parenthesis, e.g. feat(parser): add ability to parse arrays.
+
+# ** Subject
+# The subject contains a succinct description of the change:
+# * Use the imperative, present tense: "change" not "changed" nor "changes"
+# * No dot (.) at the end.
