@@ -1,0 +1,3 @@
+# Ignore all folders in this directory
+# as those are intended to be packages to build
+/*/

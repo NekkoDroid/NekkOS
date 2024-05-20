@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+
+import os
+import pathlib
+import subprocess
+import sys
+
+if sys.argv[1] != "build":
+	sys.exit(0)
+
+srcdir = os.getenv("SRCDIR")
+if not srcdir:
+	sys.exit("$SRCDIR not set")
+
+srcdir = pathlib.Path(srcdir)
+if not srcdir.exists():
+	sys.exit(f"{srcdir} does not exist")
+
+buildroot = os.getenv("BUILDROOT")
+if not buildroot:
+	sys.exit("$BUILDROOT not set")
+
+buildroot = pathlib.Path(buildroot)
+if not buildroot.exists():
+	sys.exit(f"{buildroot} does not exist")
+
+config = buildroot / "etc/makepkg.conf"
+if not config.exists():
+	sys.exit(f"{config} does not exist")
+
+environment = os.environ | {
+	"EUID": "123",
+	"PACMAN_AUTH": "env",
+	"MAKEPKG_CONF": config,
+}
+
+for directory in srcdir.glob("*/"):
+	subprocess.run(
+		[
+			"makepkg",
+			"--syncdeps",
+			"--noconfirm",
+			"--noextract",
+			"--nobuild",
+		],
+		cwd=directory,
+		env=environment,
+	).check_returncode()
