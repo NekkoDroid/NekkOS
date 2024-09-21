@@ -1,0 +1,3 @@
+#!/bin/sh -ex
+
+exec git describe --tags --dirty --broken --debug
