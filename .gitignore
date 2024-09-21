@@ -1,0 +1,27 @@
+# mkosi generated directories
+/mkosi.builddir/
+/mkosi.cache/
+/mkosi.output/
+
+# Custom tools tree image
+/mkosi.tools/
+
+# Custom packages for the images
+/mkosi.packages/
+
+# Credentials passed when running the image
+/mkosi.credentials/
+
+# Passwords used in the image
+/mkosi.rootpw
+/mkosi.passphrase
+
+# NSpawn settings when running the image
+/mkosi.nspawn
+
+# SecureBoot stuff for the image
+/mkosi.key
+/mkosi.crt
+
+# Local configuration files
+mkosi.local.conf
