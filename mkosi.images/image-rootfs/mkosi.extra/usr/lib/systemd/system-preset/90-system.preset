@@ -1,0 +1,5 @@
+enable systemd-sysupdate.timer
+enable systemd-tmpfiles-clean.timer
+
+enable ModemManager.service
+enable NetworkManager.service
