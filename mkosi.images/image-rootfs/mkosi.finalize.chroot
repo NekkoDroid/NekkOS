@@ -1,0 +1,4 @@
+#!/bin/sh -ex
+
+# See: https://gitlab.archlinux.org/archlinux/packaging/packages/pambase/-/issues/1
+install --verbose /etc/pam.d/* /usr/lib/pam.d/

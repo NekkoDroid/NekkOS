@@ -1,0 +1,16 @@
+[Unit]
+Description=User Home Directories /home
+Documentation=https://systemd.io/HOME_DIRECTORY/
+Documentation=man:file-hierarchy(7)
+
+ConditionPathIsSymbolicLink=!/home
+
+DefaultDependencies=no
+Conflicts=umount.target
+Before=local-fs.target umount.target
+RequiresMountsFor=/var/
+
+[Mount]
+What=/var/home/
+Where=/home/
+Options=bind
